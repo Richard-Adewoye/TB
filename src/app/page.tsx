@@ -1,9 +1,9 @@
 import HeroSection from "./sections/FirstSection";
 import MarriageAssessment from "./sections/SecondSection";
-/*import RelationshipFramework from "./sections/RelationshipFramework";
-import FreeResources from "./sections/FreeResources";
-import ServiceGrid from "./sections/ServiceGrid";
-import CommunityCTA from "./sections/CommunityCTA";
+import RelationshipFramework from "./sections/ThirdSection";
+import FreeResources from "./sections/FourthSection";
+import ServiceGrid from "./sections/FifthSection";
+/*import CommunityCTA from "./sections/CommunityCTA";
 */
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
         imageSrc="/TB_1.jfif"
       />
       <MarriageAssessment />
-     {/* <RelationshipFramework />
+      <RelationshipFramework />
       <FreeResources />
       <ServiceGrid />
-      <CommunityCTA /> */ }
+     {/* <CommunityCTA /> */ }
     </>
   );
 }
