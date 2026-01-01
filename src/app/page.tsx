@@ -11,7 +11,7 @@ export default function Home() {
       <HeroSection
         headline="Marriage Counselling That Works"
         subtext="Transform your relationship with evidence-based therapy tailored for lasting change."
-        imageSrc="/TB_1.jfif"
+        imageSrc="/TB_1.jpg"
       />
       <MarriageAssessment />
       <RelationshipFramework />
