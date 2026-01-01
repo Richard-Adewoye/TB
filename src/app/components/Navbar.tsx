@@ -24,16 +24,16 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center space-x-8 text-sm font-light tracking-wide md:flex">
-            <Link href="/services" className="text-slate-300 hover:text-white">
-              Services
+            <Link href="/#" className="text-slate-300 hover:text-white">
+              Home
             </Link>
-            <Link href="/resources" className="text-slate-300 hover:text-white">
-              Resources
-            </Link>
-            <Link href="/about" className="text-slate-300 hover:text-white">
+            <Link href="/#" className="text-slate-300 hover:text-white">
               About
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-2 text-white transition-all hover:border-white/20">
+            <Link href="/#" className="text-slate-300 hover:text-white">
+              Resources
+            </Link>
+            <Link href="/#" className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-2 text-white transition-all hover:border-white/20">
               Contact
             </Link>
           </nav>
@@ -48,16 +48,16 @@ export default function Navbar() {
         {open && (
           <div className="mt-2 rounded-2xl bg-[#1A1612]/90 p-4 backdrop-blur-md shadow-lg md:hidden">
             <nav className="flex flex-col space-y-2">
-              <Link href="/services" className="text-slate-300 hover:text-white">
-                Services
+              <Link href="/#" className="text-slate-300 hover:text-white">
+                Home
               </Link>
-              <Link href="/resources" className="text-slate-300 hover:text-white">
-                Resources
-              </Link>
-              <Link href="/about" className="text-slate-300 hover:text-white">
+              <Link href="/#" className="text-slate-300 hover:text-white">
                 About
               </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-white hover:border-white/20">
+              <Link href="/#" className="text-slate-300 hover:text-white">
+                Services
+              </Link>
+              <Link href="/#" className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-white hover:border-white/20">
                 Contact
               </Link>
             </nav>

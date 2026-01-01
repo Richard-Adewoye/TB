@@ -3,8 +3,8 @@ import MarriageAssessment from "./sections/SecondSection";
 import RelationshipFramework from "./sections/ThirdSection";
 import FreeResources from "./sections/FourthSection";
 import ServiceGrid from "./sections/FifthSection";
-/*import CommunityCTA from "./sections/CommunityCTA";
-*/
+import CommunityCTA from "./sections/SixthSection";
+
 export default function Home() {
   return (
     <>
@@ -17,7 +17,7 @@ export default function Home() {
       <RelationshipFramework />
       <FreeResources />
       <ServiceGrid />
-     {/* <CommunityCTA /> */ }
+      <CommunityCTA /> 
     </>
   );
 }
