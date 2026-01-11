@@ -28,26 +28,29 @@ export default function Navbar() {
             Dr. Tunji Babajide
           </span>
 
-  {/* understated accent underline */}
   <span className="absolute left-0 -bottom-1 h-px w-0 bg-gradient-to-r from-[#d4a047] to-transparent transition-all duration-500 group-hover:w-full" />
 </Link>
 
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-8 text-sm md:flex">
-            {["Home", "About", "Services", "Contact"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href="/#"
-                  className="relative text-[#e7d7b5] transition hover:text-white"
-                >
-                  <span className="after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#d4a047] after:transition-all hover:after:w-full" />
-                  {item}
-                </Link>
-              )
-            )}
-          </nav>
+  {[
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Contact", href: "/contact" },
+  ].map(({ label, href }) => (
+    <Link
+      key={label}
+      href={href}
+      className="relative text-[#e7d7b5] transition hover:text-white"
+    >
+      <span className="after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#d4a047] after:transition-all hover:after:w-full" />
+      {label}
+    </Link>
+  ))}
+</nav>
+
 
           {/* CTA */}
           
