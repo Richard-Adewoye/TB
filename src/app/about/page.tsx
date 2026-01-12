@@ -27,9 +27,9 @@ export default function StrategicSection() {
 
   // Local image paths (assuming they are in your /public folder)
   const localImages = [
-    { src: "/img_1.jpg", alt: "Strategic Consultation" },
-    { src: "/img_2.jpg", alt: "Business Execution" },
-    { src: "/img_3.jpg", alt: "Corporate Growth" },
+    { src: "/img_1.jpg", alt: "rl-1" },
+    { src: "/img_2.jpg", alt: "rl-2" },
+    { src: "/img_3.jpg", alt: "rl-3" },
   ];
 
   return (
@@ -46,12 +46,12 @@ export default function StrategicSection() {
         <article className="mx-auto max-w-6xl md:grid md:grid-cols-2 md:gap-24 items-center">
           <div className="flex items-center gap-3 text-sm font-medium text-[#1a1208]">
             <Circle className="h-2 w-2 fill-[#d4a047] text-[#d4a047]" />
-            <span className="tracking-wide uppercase">About Acelia</span>
+            <span className="tracking-wide uppercase">About Tunji Babajide</span>
           </div>
 
           <div className="mt-6 md:mt-0">
             <p className="text-3xl leading-tight text-[#1a1208] md:text-4xl italic font-serif">
-              With over 15 years of experience, we specialize in delivering tailored solutions that align strategy, technology, and execution.
+              With multiple years of experience, We provide personalized guidance that bridges emotional healing, practical tools, and lasting relational change.
             </p>
           </div>
         </article>
@@ -68,10 +68,10 @@ export default function StrategicSection() {
       >
         <div className="mx-auto max-w-4xl text-center mb-20">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-[#f5e6c8]">
-            Your strategic partner for business success
+            Building the blueprint for thriving relationships
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg md:text-xl text-[#e7d7b5]">
-            We help organizations navigate complexity, scale intelligently, and execute with confidence.
+            Helping individuals and families navigate emotional complexity, grow intentionally, and connect with confidence
           </p>
         </div>
 

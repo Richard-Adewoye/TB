@@ -98,7 +98,7 @@ export default function ContactPage() {
               <InfoItem
                 icon={MapPin}
                 title="Our Location"
-                text="123 Modern Street, New York"
+                text="123 Modern Street, United Kingdom"
               />
               <InfoItem
                 icon={Mail}
@@ -163,7 +163,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* SCROLL TO TOP */}
       {showScroll && (
         <button
           onClick={scrollTop}
