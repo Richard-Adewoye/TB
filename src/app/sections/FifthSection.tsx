@@ -4,8 +4,6 @@ import Link from "next/link";
 import { services } from "../constants/services";
 import IconBox from "../components/IconBox";
 
-
-
 export default function ServiceGrid() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-neutral-50 via-neutral-100/30 to-neutral-50 px-6 py-24">
@@ -54,10 +52,12 @@ export default function ServiceGrid() {
               {/* CTA */}
               <Link
                 href={service.href}
-                aria-label={`Book ${service.title}`}
+                aria-label={service.ctaText ? `${service.ctaText} ${service.title}` : `Visit ${service.title}`}
                 className="group/btn relative mt-auto rounded-full border-2 border-neutral-200 bg-white px-6 py-2.5 font-medium text-neutral-950 shadow-sm transition-all duration-300 hover:border-amber-400 hover:bg-amber-50 hover:shadow-md"
               >
-                <span className="relative z-10">Book Session</span>
+                <span className="relative z-10">
+                  {service.ctaText || "Learn More"}
+                </span>
                 <span className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-amber-100/50 to-transparent transition-transform duration-700 group-hover/btn:translate-x-[100%]" />
               </Link>
 

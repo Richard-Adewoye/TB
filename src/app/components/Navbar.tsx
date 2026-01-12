@@ -56,7 +56,7 @@ export default function Navbar() {
           
         <div className="hidden md:flex items-center">
          <Link
-          href="/login"
+          href="/"
           aria-label="Sign in or create account"
           className="group relative flex h-10 w-10 items-center justify-center rounded-full border border-[#d4a047]/30 bg-[#1a1208]/60 text-[#f5e6c8] backdrop-blur-md transition-all hover:border-[#d4a047]/60 hover:bg-[#1a1208]/80"
           >
