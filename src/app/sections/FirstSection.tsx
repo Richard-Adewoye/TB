@@ -9,8 +9,8 @@ interface HeroSectionProps {
   headline: string;
   subtext: string;
   imageSrc: string[];
-  ctaText?: string; 
-  ctaHref?: string; 
+  ctaText?: string;
+  ctaHref?: string;
 }
 
 export default function HeroSection({
@@ -21,36 +21,19 @@ export default function HeroSection({
   ctaHref = "/#",
 }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % imageSrc.length);
     }, 6000);
+
     return () => clearInterval(interval);
   }, [imageSrc.length]);
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const parallax = (multiplier: number) =>
-    mounted ? `translateY(${scrollY * multiplier}px)` : "translateY(0)";
-
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#1a1208]">
-      {/* Background slideshow with parallax */}
-      <div
-        className="absolute inset-0"
-        style={{
-          transform: parallax(0.5),
-          transition: "transform 0.1s ease-out",
-        }}
-      >
+    <section className="relative w-full min-h-screen overflow-hidden bg-[#1a1208]">
+      {/* Background slideshow (NO parallax) */}
+      <div className="absolute inset-0">
         {imageSrc.map((img, idx) => (
           <div
             key={idx}
@@ -68,6 +51,7 @@ export default function HeroSection({
           </div>
         ))}
 
+        {/* Color overlays */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1208]/95 via-[#241809]/70 to-[#1a1208]/95" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,160,71,0.15),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(194,142,58,0.08),transparent_50%)]" />
@@ -80,13 +64,7 @@ export default function HeroSection({
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 pb-20 md:px-12 lg:px-16">
-        <div
-          className="max-w-3xl text-white transition-all duration-700"
-          style={{
-            opacity: Math.max(0, 1 - scrollY / 500),
-            transform: `translateY(${scrollY * 0.3}px)`,
-          }}
-        >
+        <div className="max-w-3xl text-white">
           <h1 className="text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
             <span className="block bg-gradient-to-br from-white via-[#f5e6c8] to-[#d4a047] bg-clip-text text-transparent">
               {headline}
@@ -97,7 +75,6 @@ export default function HeroSection({
             {subtext}
           </p>
 
-          {/* Custom CTA */}
           <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center">
             <Link
               href={ctaHref}
@@ -110,22 +87,6 @@ export default function HeroSection({
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-        style={{
-          opacity: Math.max(0, 1 - scrollY / 200),
-          transition: "opacity 0.3s ease-out",
-        }}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-[#e7d7b5]/50">Scroll</span>
-          <div className="h-8 w-5 rounded-full border-2 border-[#d4a047]/30 p-1">
-            <div className="h-2 w-1 animate-bounce rounded-full bg-[#d4a047]" />
           </div>
         </div>
       </div>

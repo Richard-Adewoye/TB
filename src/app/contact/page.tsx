@@ -1,21 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  ArrowRight,
-  Book,
-  Users,
-  Play,
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
-import {
-  FaFacebookF,
-  FaXTwitter,
-  FaLinkedinIn,
-  FaYoutube,
-} from "react-icons/fa6";
+import { ArrowRight, Book, Users, Play, Phone, Mail, MapPin } from "lucide-react";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import { Playfair_Display, Inter } from "next/font/google";
 
 const serif = Playfair_Display({ subsets: ["latin"], weight: ["600", "700"] });
@@ -25,13 +12,16 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Frontend responsibility ends here.
+    // Backend dev can hook into this form however they want.
     setSubmitted(true);
+    e.currentTarget.reset();
   };
 
-  const scrollTop = () =>
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   useEffect(() => {
     const onScroll = () => setShowScroll(window.scrollY > 400);
@@ -46,27 +36,19 @@ export default function ContactPage() {
       {/* ===================== */}
       <section className="bg-[#2A241F] py-24 px-6 text-[#EDE6DA]">
         <div className="mx-auto max-w-7xl flex flex-col gap-16 md:flex-row">
-
-          {/* FORM – FIRST */}
           <div className="flex-1">
             <div className="rounded-3xl bg-[#3A322B] p-10 shadow-lg">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {["Full Name", "Email", "Subject"].map((label) => (
+                  {["Email", "Phone", "Subject"].map((label) => (
                     <input
                       key={label}
-                      required
+                      name={label}
                       placeholder={label}
+                      required={label !== "Phone"}
                       className="w-full border-b border-gray-600 bg-transparent pb-2 outline-none focus:border-[#A68249] text-[#EDE6DA]"
                     />
                   ))}
-
-                  <textarea
-                    required
-                    placeholder="Message"
-                    rows={4}
-                    className="w-full border-b border-gray-600 bg-transparent pb-2 outline-none focus:border-[#A68249] text-[#EDE6DA]"
-                  />
 
                   <button
                     type="submit"
@@ -84,7 +66,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* INFO – SECOND */}
           <div className="flex-1">
             <p className="mb-4 text-sm font-semibold uppercase text-[#A68249]">
               Get in touch!
@@ -100,11 +81,7 @@ export default function ContactPage() {
                 title="Our Location"
                 text="123 Modern Street, United Kingdom"
               />
-              <InfoItem
-                icon={Mail}
-                title="Email"
-                text="support@example.com"
-              />
+              <InfoItem icon={Mail} title="Email" text="support@example.com" />
 
               <div>
                 <p className="mb-2 font-semibold">Social Network</p>
@@ -117,7 +94,6 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -133,19 +109,23 @@ export default function ContactPage() {
           </h2>
 
           <div className="grid gap-10 md:grid-cols-3">
-            {[{
-              title: "Educational Materials",
-              desc: "In-depth case studies, guides, and ebooks.",
-              icon: Book,
-            }, {
-              title: "Interactive Learning",
-              desc: "Live webinars and supportive communities.",
-              icon: Users,
-            }, {
-              title: "On-Demand Content",
-              desc: "Videos, short lessons, and recorded talks.",
-              icon: Play,
-            }].map(({ title, desc, icon: Icon }) => (
+            {[
+              {
+                title: "Educational Materials",
+                desc: "In-depth case studies, guides, and ebooks.",
+                icon: Book,
+              },
+              {
+                title: "Interactive Learning",
+                desc: "Live webinars and supportive communities.",
+                icon: Users,
+              },
+              {
+                title: "On-Demand Content",
+                desc: "Videos, short lessons, and recorded talks.",
+                icon: Play,
+              },
+            ].map(({ title, desc, icon: Icon }) => (
               <div
                 key={title}
                 className="group rounded-2xl bg-[#1A1612] p-8 text-center"

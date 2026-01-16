@@ -1,11 +1,11 @@
 import { ServiceSectionTwo } from "../sections/ServiceSectionTwo";
-import { ServiceSectionThree } from "../sections/ServiceSectionThree";
+import { ServiceSectionOne } from "../sections/ServiceSectionOne";
 
 export default function AboutPage() {
   return (
     <main className="w-full overflow-x-hidden">
       <ServiceSectionTwo />
-      <ServiceSectionThree />
+      <ServiceSectionOne />
     </main>
   );
 }

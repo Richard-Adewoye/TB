@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 
-export function ServiceSectionThree() {
+export function ServiceSectionOne() {
   return (
     <section className="bg-[#1A1612] px-6 py-28">
       <div className="mx-auto max-w-4xl text-center">

@@ -4,10 +4,12 @@ import RelationshipFramework from "./sections/ThirdSection";
 import FreeResources from "./sections/FourthSection";
 import ServiceGrid from "./sections/FifthSection";
 import CommunityCTA from "./sections/SixthSection";
+import PortraitSection from "./sections/PortraitSection";
 
 export default function Home() {
   return (
     <>
+      <PortraitSection />
       <HeroSection
         headline="Marriage Counselling That Works"
         subtext="Transform your relationship with evidence-based therapy tailored for lasting change."
