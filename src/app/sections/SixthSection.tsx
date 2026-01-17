@@ -53,7 +53,7 @@ export default function CommunityCTA() {
 
           {/* CTA Button */}
           <Link
-            href="/community"
+            href="/#"
             className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#C28E3A] to-[#D4A047] px-8 py-3 font-semibold text-white shadow-xl shadow-amber-400/30 transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:shadow-amber-400/50 active:scale-[0.98]"
           >
             <span className="relative z-10">Join the Community</span>

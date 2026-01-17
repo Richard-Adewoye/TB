@@ -5,6 +5,7 @@ import FreeResources from "./sections/FourthSection";
 import ServiceGrid from "./sections/FifthSection";
 import CommunityCTA from "./sections/SixthSection";
 import PortraitSection from "./sections/PortraitSection";
+import TestimonialSection from "./sections/Testimonial";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <RelationshipFramework />
       <FreeResources />
       <ServiceGrid />
+      <TestimonialSection />
       <CommunityCTA /> 
     </>
   );
