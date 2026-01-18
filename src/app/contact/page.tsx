@@ -14,9 +14,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // Frontend responsibility ends here.
-    // Backend dev can hook into this form however they want.
     setSubmitted(true);
     e.currentTarget.reset();
   };
@@ -75,13 +72,13 @@ export default function ContactPage() {
             </h2>
 
             <div className="grid gap-6 sm:grid-cols-2">
-              <InfoItem icon={Phone} title="Call Center" text="+1 234 567 890" />
+              <InfoItem icon={Phone} title="Call Center" text="+447354345913" />
               <InfoItem
                 icon={MapPin}
                 title="Our Location"
                 text="123 Modern Street, United Kingdom"
               />
-              <InfoItem icon={Mail} title="Email" text="support@example.com" />
+              <InfoItem icon={Mail} title="Email" text="optimizecoachingservices@gmail.com" />
 
               <div>
                 <p className="mb-2 font-semibold">Social Network</p>
